@@ -108,22 +108,34 @@ The Travlr application now runs using a structured MVC architecture with control
 
 ---
 
-# Repository Structure
+## Repository Structure
+
+```text
 CS-465-14116-M01-Full-Stack-Development-I-2026
 │
 ├── app_server
-│ ├── controllers
-│ ├── routes
-│ └── views
+│   ├── controllers
+│   │   └── traveller.js
+│   ├── routes
+│   │   └── index.js
+│   └── views
+│       ├── index.hbs
+│       ├── travel.hbs
+│       ├── rooms.hbs
+│       ├── meals.hbs
+│       ├── news.hbs
+│       ├── about.hbs
+│       └── contact.hbs
 │
 ├── public
-│ ├── css
-│ └── images
+│   ├── css
+│   └── images
 │
 ├── index.js
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
 
 
 ---
