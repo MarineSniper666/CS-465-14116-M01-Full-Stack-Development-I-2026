@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const home = (req, res) => {
     console.log('Home controller triggered');
     res.render('index', {
@@ -7,9 +9,15 @@ const home = (req, res) => {
 
 const travel = (req, res) => {
     console.log('Travel controller triggered');
+
+    const trips = JSON.parse(
+        fs.readFileSync('./data/trips.json', 'utf8')
+    );
+
     res.render('travel', {
         title: 'Travel',
-        subtitle: 'Explore our featured dive destinations'
+        subtitle: 'Explore our featured dive destinations',
+        trips: trips
     });
 };
 
