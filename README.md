@@ -149,7 +149,7 @@ CS-465-14116-M01-Full-Stack-Development-I-2026
 
 ---
 
-Module 3.0.0.0 – Dynamic Data Integration and Rendering
+# Module 3.0.0.0 – Dynamic Data Integration and Rendering
 
 Module 3 focused on enhancing the Travlr Getaways application by integrating dynamic data into the Travel page using JSON and Handlebars templating.
 
