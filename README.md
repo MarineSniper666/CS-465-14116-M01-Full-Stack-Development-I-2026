@@ -149,36 +149,43 @@ CS-465-14116-M01-Full-Stack-Development-I-2026
 
 ---
 
+# Module 3.0.0.0 – Dynamic Data Integration and Rendering
+
+Module 3 focused on enhancing the Travlr Getaways application by integrating dynamic data into the Travel page using JSON and Handlebars templating.
+
+### Work Completed
+
+#### Dynamic Data Integration
+- Created a `data` directory to store structured application data
+- Added `trips.json` to hold travel destination information
+- Structured trip data with properties for name, image, and description
+
+#### Controller Enhancement
+- Updated the `traveller` controller to read data from `trips.json`
+- Passed dynamic trip data to the `travel.hbs` view
+- Maintained separation of concerns between data handling and presentation
+
+#### View Refactor
+- Modified `travel.hbs` to dynamically render trip data
+- Implemented Handlebars iteration using `{{#each trips}}`
+- Replaced hardcoded HTML content with dynamic placeholders
+
+#### Routing and MVC Alignment
+- Verified `/travel` route correctly connects to the controller
+- Ensured controller passes data to the view using Express rendering
+- Maintained proper MVC structure across the application
+
+#### Testing and Validation
+- Tested the application locally using `localhost:3000`
+- Confirmed dynamic content renders correctly on the Travel page
+- Verified images, styling, and layout remain consistent with the original design
+
+### Result
+
+The Travlr application now supports dynamic content rendering using JSON data and Handlebars templates. The Travel page successfully transitions from static HTML to a data-driven implementation while maintaining the established MVC architecture. This improvement enhances scalability and prepares the application for future full-stack functionality.
+---
+
 # Author
 Robert Lake  
 Southern New Hampshire University  
 CS-465 Full Stack Development I
-
-# Module 3.0.0.0 – Dynamic Data Integration and Rendering
-
-### Module 3 focused on enhancing the Travlr Getaways application by integrating dynamic data into the Travel page using JSON and Handlebars templating.
-
-Work Completed
-Dynamic Data Integration
-Created a data directory to store structured application data
-Added trips.json to hold travel destination information
-Structured trip data with properties for name, image, and description
-Controller Enhancement
-Updated the traveller controller to read data from trips.json
-Passed dynamic trip data to the travel.hbs view
-Maintained separation of concerns between data handling and presentation
-View Refactor
-Modified travel.hbs to dynamically render trip data
-Implemented Handlebars iteration using {{#each trips}}
-Replaced hardcoded HTML content with dynamic placeholders
-Routing and MVC Alignment
-Verified /travel route correctly connects to the controller
-Ensured controller passes data to the view using Express rendering
-Maintained proper MVC structure across the application
-Testing and Validation
-Tested the application locally using localhost:3000
-Confirmed dynamic content renders correctly on the Travel page
-Verified images, styling, and layout remain consistent with the original design
-Result
-
-The Travlr application now supports dynamic content rendering using JSON data and Handlebars templates. The Travel page successfully transitions from static HTML to a data-driven implementation while maintaining the established MVC architecture. This improvement enhances scalability and prepares the application for future full-stack functionality.
