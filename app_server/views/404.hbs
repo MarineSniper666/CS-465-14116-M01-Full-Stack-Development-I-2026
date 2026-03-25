@@ -1,0 +1,59 @@
+<h1>{{title}}</h1>
+<p>This page is not available yet.</p>
+<p>Please tap the lizard for a fun surprise while you wait.</p>
+
+<img src="/images/lizard.png" id="lizard" class="lizard">
+<div id="message-container">
+    <p id="secret-message"></p>
+</div>
+
+<script>
+let clicks = 0;
+const secretMessage = document.getElementById('secret-message');
+
+function createConfetti() {
+    const container = document.getElementById('message-container');
+    const messageRect = secretMessage.getBoundingClientRect();
+    const containerRect = container.getBoundingClientRect();
+
+    const originX = messageRect.left - containerRect.left + (messageRect.width / 2);
+    const originY = messageRect.top - containerRect.top + (messageRect.height / 2);
+
+    for (let i = 0; i < 25; i++) {
+        const confetti = document.createElement('span');
+        confetti.className = 'confetti';
+
+        const x = (Math.random() - 0.5) * 220 + 'px';
+        const y = (Math.random() - 0.5) * 140 + 'px';
+
+        confetti.style.left = originX + 'px';
+        confetti.style.top = originY + 'px';
+        confetti.style.setProperty('--x', x);
+        confetti.style.setProperty('--y', y);
+
+        container.appendChild(confetti);
+
+        setTimeout(() => {
+            confetti.remove();
+        }, 800);
+    }
+}
+
+document.getElementById('lizard').addEventListener('click', function () {
+    clicks++;
+
+    if (clicks === 1) {
+        secretMessage.innerText = 'The lizard notices you.';
+    } else if (clicks === 2) {
+        secretMessage.innerText = 'It seems curious.';
+    } else if (clicks === 3) {
+        secretMessage.innerText = 'It trusts you.';
+    } else if (clicks === 4) {
+        secretMessage.innerText = 'Almost there...';
+    } else if (clicks === 5) {
+        secretMessage.innerText = 'You found the secret.';
+        secretMessage.style.color = '#d32f2f';
+        createConfetti();
+    }
+});
+</script>
