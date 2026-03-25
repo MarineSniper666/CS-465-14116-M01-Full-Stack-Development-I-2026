@@ -180,10 +180,82 @@ Module 3 focused on enhancing the Travlr Getaways application by integrating dyn
 - Confirmed dynamic content renders correctly on the Travel page
 - Verified images, styling, and layout remain consistent with the original design
 
-#### Result
+### Result
 
 The Travlr application now supports dynamic content rendering using JSON data and Handlebars templates. The Travel page successfully transitions from static HTML to a data-driven implementation while maintaining the established MVC architecture. This improvement enhances scalability and prepares the application for future full-stack functionality.
+
 ---
+
+# Module 4.0.0.0 – API Development and Database Integration
+
+Module 4 expanded the Travlr Getaways application into a full-stack system by integrating MongoDB and implementing an API layer for data access.
+
+### Work Completed
+
+#### Database Integration
+- Created the `app_api` directory
+- Added subdirectories:
+  - `models`
+  - `routes`
+  - `controllers`
+- Implemented a MongoDB connection using **Mongoose**
+- Created `db.js` to establish and manage the database connection
+- Verified successful connection through terminal output
+
+#### Data Modeling
+- Created a Mongoose schema for trip data
+- Defined structure including:
+  - name
+  - image
+  - description
+- Ensured consistent data structure across all database entries
+
+#### Data Population
+- Used existing `trips.json` data to populate the MongoDB database
+- Implemented a seeding process to insert trip data into the Trips collection
+- Verified data presence using MongoDB Compass
+
+#### API Implementation
+- Created API routing in `app_api/routes/index.js`
+- Implemented controller logic in `app_api/controllers/trips.js`
+- Built endpoint:
+
+Example:
+
+/api/trips
+
+- Configured the server to use the API route with `/api` prefix
+- Verified endpoint returns JSON data in the browser and Postman
+
+#### Server Integration
+- Updated `index.js` to:
+  - Include API routing
+  - Initialize database connection
+- Ensured API and frontend routes operate simultaneously without conflict
+
+#### Testing and Validation
+- Tested API endpoint using browser and Postman
+- Confirmed JSON response format and data accuracy
+- Verified database contents match expected structure
+
+#### Routing Enhancement
+- Updated internal page links to use route-based navigation instead of static `.html` files
+- Ensured all navigation flows through Express controllers and Handlebars views
+
+#### Error Handling Enhancement
+- Replaced basic 404 response with a custom Handlebars 404 view
+- Maintained application layout and styling for undefined routes
+
+#### Additional Enhancement
+- Implemented an interactive element on the 404 page using JavaScript event handling
+- Added user interaction feedback and animation to demonstrate front-end scripting capability
+
+ #### Architectural Observation
+- Identified and resolved routing conflicts caused by static file serving overriding Express routes, reinforcing the importance of middleware order and separation between static assets and dynamic view rendering
+
+### Result
+
+The Travlr application now includes a fully functional API and database integration. The system supports dynamic data retrieval through MongoDB and exposes structured data through API endpoints. This module completes the transition from a static and template-based application to a full-stack architecture with persistent data storage and service-based communication.
 
 # Author
 Robert Lake  
