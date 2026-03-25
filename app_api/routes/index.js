@@ -5,4 +5,6 @@ const ctrlTrips = require('../controllers/trips');
 
 router.get('/trips', ctrlTrips.tripsList);
 
+router.get('/trips/:tripId', ctrlTrips.tripsReadOne);
+
 module.exports = router;
