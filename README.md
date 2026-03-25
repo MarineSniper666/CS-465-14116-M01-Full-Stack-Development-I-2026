@@ -180,7 +180,7 @@ Module 3 focused on enhancing the Travlr Getaways application by integrating dyn
 - Confirmed dynamic content renders correctly on the Travel page
 - Verified images, styling, and layout remain consistent with the original design
 
-### Result
+#### Result
 
 The Travlr application now supports dynamic content rendering using JSON data and Handlebars templates. The Travel page successfully transitions from static HTML to a data-driven implementation while maintaining the established MVC architecture. This improvement enhances scalability and prepares the application for future full-stack functionality.
 ---
