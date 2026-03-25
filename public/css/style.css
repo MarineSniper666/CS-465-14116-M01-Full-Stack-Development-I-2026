@@ -475,6 +475,7 @@ hr {
 }
 #footer ul.navigation {
 	float: left;
+	display: inline-block;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -506,6 +507,7 @@ hr {
 /** Connect **/
 #connect {
 	float: right;
+	display: inline-block;
 	line-height: 26px;
 	margin: 12px 0 0;
 }
@@ -541,9 +543,7 @@ hr {
 #connect a.googleplus:hover {
 	background-position: 0 -197px;
 }
-
 /* ---------------- LIZARD EASTER EGG ---------------- */
-
 .lizard {
     width: 80px;
     display: block;
@@ -552,14 +552,6 @@ hr {
     transition: transform 0.2s ease;
 }
 
-
-#secret-message {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #2e7d32;
-}
-
-/* Wiggle animation */
 @keyframes wiggle {
     0% { transform: rotate(0deg); }
     25% { transform: rotate(-5deg); }
@@ -568,7 +560,6 @@ hr {
     100% { transform: rotate(0deg); }
 }
 
-/* Combine scale + wiggle */
 .lizard:hover {
     transform: scale(1.1);
     animation: wiggle 0.4s ease;
@@ -577,6 +568,12 @@ hr {
 #message-container {
     position: relative;
     display: inline-block;
+}
+
+#secret-message {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2e7d32;
 }
 
 .confetti {

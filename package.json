@@ -20,7 +20,6 @@
   "homepage": "https://github.com/MarineSniper666/CS-465-14116-M01-Full-Stack-Development-I-2026#readme",
   "dependencies": {
     "express": "^5.2.1",
-    "hbs": "^4.2.0",
-    "mongoose": "^9.3.2"
+    "hbs": "^4.2.0"
   }
 }
