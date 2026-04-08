@@ -257,6 +257,81 @@ Example:
 
 The Travlr application now includes a fully functional API and database integration. The system supports dynamic data retrieval through MongoDB and exposes structured data through API endpoints. This module completes the transition from a static and template-based application to a full-stack architecture with persistent data storage and service-based communication.
 
+---
+
+## Module 6.0.0.0 – Angular Frontend and Full CRUD Integration
+
+Module 6 expanded the Travlr Getaways application by introducing an Angular frontend and integrating full Create, Read, Update, and Delete (CRUD) functionality with the existing Express API and MongoDB database.
+
+### Work Completed
+
+#### Angular Application Setup
+
+- Installed and configured Angular CLI
+- Generated the Angular administrative application (`travlr-admin`)
+- Verified the Angular development server runs on `localhost:4200`
+- Organized the project using a component-based structure
+
+#### Component Development
+
+- Created Angular components:
+  - Trip List
+  - Trip Card
+  - Add Trip
+  - Edit Trip
+- Structured components to separate UI rendering and logic
+
+#### Routing Implementation
+
+- Configured routing using `app.routes.ts`
+- Implemented application routes:
+  - `/` for trip listing
+  - `/add-trip` for creating trips
+  - `/edit-trip/:id` for updating trips
+- Enabled dynamic route parameters for editing functionality
+
+#### Service Integration
+
+- Created a centralized data service (`trip-data.ts`)
+- Implemented HTTP requests using Angular `HttpClient`
+- Connected to backend API endpoints:
+  - GET `/api/trips`
+  - GET `/api/trips/:id`
+  - POST `/api/trips`
+  - PUT `/api/trips/:id`
+  - DELETE `/api/trips/:id`
+
+#### CRUD Functionality
+
+- Implemented trip creation using form submission and POST requests
+- Retrieved and displayed trip data dynamically from the API
+- Enabled updating of existing trips using PUT requests
+- Added delete functionality with API integration
+- Verified all operations update both the UI and database correctly
+
+#### Change Detection Handling
+
+- Resolved data binding issues when editing trips
+- Ensured form fields populate correctly using Angular change detection
+
+#### Full Stack Integration
+
+- Connected Angular frontend with Express backend and MongoDB database
+- Ensed consistent communication between client and server layers
+- Verified data persistence across all CRUD operations
+
+#### Testing and Validation
+
+- Tested all CRUD operations through the Angular interface
+- Verified API responses using browser and development tools
+- Confirmed application stability after repeated operations
+
+### Result
+
+The Travlr application now includes a fully functional Angular frontend integrated with the existing Express API and MongoDB database. The system supports complete CRUD operations with dynamic updates, completing the transition to a full-stack web application with a modern client-side interface.
+
+---
+
 # Author
 Robert Lake  
 Southern New Hampshire University  
