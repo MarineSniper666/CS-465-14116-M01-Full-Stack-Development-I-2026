@@ -259,7 +259,7 @@ The Travlr application now includes a fully functional API and database integrat
 
 ---
 
-## Module 6.0.0.0 – Angular Frontend and Full CRUD Integration
+# Module 6.0.0.0 – Angular Frontend and Full CRUD Integration
 
 Module 6 expanded the Travlr Getaways application by introducing an Angular frontend and integrating full Create, Read, Update, and Delete (CRUD) functionality with the existing Express API and MongoDB database.
 
