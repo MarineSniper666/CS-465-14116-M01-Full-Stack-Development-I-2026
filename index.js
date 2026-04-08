@@ -1,11 +1,14 @@
 const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
+const cors = require('cors');
 
 require('./app_api/models/db');
 require('./app_api/models/travlr');
 
 const app = express();
+app.use(cors());
+app.use(express.json());
 const indexRouter = require('./app_server/routes/index');
 const apiRouter = require('./app_api/routes/index');
 

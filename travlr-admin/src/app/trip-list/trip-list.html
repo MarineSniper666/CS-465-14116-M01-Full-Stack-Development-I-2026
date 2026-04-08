@@ -1,0 +1,8 @@
+<div class="container mt-4">
+  <h2>Trip List</h2>
+  <p>Trips loaded: {{ trips.length }}</p>
+
+  @for (trip of trips; track trip._id) {
+    <app-trip-card [trip]="trip" (deleteTrip)="removeTrip($event)"></app-trip-card>
+  }
+</div>

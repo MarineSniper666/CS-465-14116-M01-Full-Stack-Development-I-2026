@@ -1,0 +1,10 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">{{ trip.name }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ trip.image }}</h6>
+    <p class="card-text">{{ trip.description }}</p>
+
+    <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+    <button class="btn btn-primary me-2" (click)="onEdit()">Edit</button>
+  </div>
+</div>
