@@ -257,6 +257,172 @@ Example:
 
 The Travlr application now includes a fully functional API and database integration. The system supports dynamic data retrieval through MongoDB and exposes structured data through API endpoints. This module completes the transition from a static and template-based application to a full-stack architecture with persistent data storage and service-based communication.
 
+---
+
+# Module 6.0.0.0 – Angular Frontend and Full CRUD Integration
+
+Module 6 expanded the Travlr Getaways application by introducing an Angular single-page application for the administrative side of the system and connecting it to the existing Express and MongoDB backend.
+
+### Work Completed
+
+#### Angular Application Setup
+
+- Installed and configured Angular CLI
+- Generated the Angular administrative application (`travlr-admin`)
+- Verified the Angular development server runs locally on `localhost:4200`
+- Organized the administrative interface using a component-based structure
+
+#### Component Development
+
+- Created Angular components for:
+  - Trip List
+  - Trip Card
+  - Add Trip
+  - Edit Trip
+- Refactored trip rendering into reusable Angular components
+- Separated interface logic from data access logic
+
+#### Routing Implementation
+
+- Configured Angular routing using `app.routes.ts`
+- Implemented routes for:
+  - `/` to display trip listings
+  - `/add-trip` to create new trips
+  - `/edit-trip/:id` to update existing trips
+- Enabled dynamic route parameter handling for editing specific trip records
+
+#### Service Integration
+
+- Created a centralized Angular data service (`trip-data.ts`)
+- Implemented HTTP communication using Angular `HttpClient`
+- Connected the Angular frontend to backend API endpoints for trip data access
+
+#### CRUD Functionality
+
+- Implemented GET functionality to retrieve trip data from the backend
+- Implemented POST functionality to add new trips from the Angular form
+- Implemented PUT functionality to edit and update existing trips
+- Implemented DELETE functionality to remove trips from the database
+- Verified that all CRUD operations update both the interface and MongoDB correctly
+
+#### Form Handling and Data Binding
+
+- Used `ngModel` to bind Angular forms to component data
+- Created Add Trip and Edit Trip forms for administrative actions
+- Preloaded existing trip data into the Edit Trip form
+- Added form submission logic for create and update operations
+
+#### Frontend and Backend Integration
+
+- Connected the Angular administrative application to the Express API
+- Verified communication between Angular, Express, and MongoDB
+- Ensured trip data persists correctly after page refreshes
+
+#### Styling and Interface Enhancement
+
+- Installed and applied Bootstrap to the Angular application
+- Styled trip output using Bootstrap cards
+- Added buttons for Edit and Delete actions
+- Improved spacing and layout for the administrative interface
+
+#### Testing and Validation
+
+- Tested the Angular SPA locally through the browser
+- Verified API interactions through the frontend interface
+- Confirmed that added trips appear in the list
+- Confirmed that updated trip data persists after refresh
+- Confirmed that deleted trip data is removed from both the interface and database
+
+### Result
+
+The Travlr application now includes a fully functional Angular single-page administrative interface integrated with the existing Express API and MongoDB database. The system supports complete CRUD operations through a responsive client-side interface, completing the transition from a server-rendered application to a full-stack application with a modern SPA administrative layer.
+
+---
+
+# Module 7.0.0.0 – Security Implementation and Authentication
+
+Module 7 focused on securing the Travlr Getaways application by implementing user authentication, JSON Web Tokens (JWT), and protected API endpoints. This module introduced a full authentication workflow across both the backend and the Angular admin interface.
+
+### Work Completed
+
+#### User Authentication System
+
+- Created a `users` model using Mongoose
+- Implemented secure password handling using hashing and salting
+- Added methods for:
+  - setting passwords
+  - validating passwords
+  - generating JWT tokens
+- Ensured sensitive user data is not stored in plain text
+
+#### Authentication Controller
+
+- Created `authentication.js` controller
+- Implemented:
+  - `register` endpoint for creating new users
+  - `login` endpoint for validating credentials
+- Configured both endpoints to return a JWT token upon success
+
+#### API Security Configuration
+
+- Installed and configured:
+  - `passport`
+  - `passport-local`
+  - `jsonwebtoken`
+- Created Passport local strategy for email/password authentication
+- Integrated Passport into the application server
+- Established environment-based secret key for token signing
+
+#### Protected Route Middleware
+
+- Created `auth.js` middleware for request validation
+- Implemented token verification using JWT
+- Configured middleware to:
+  - reject unauthorized requests
+  - allow access only with valid tokens
+- Applied middleware to protected endpoints:
+  - POST `/api/trips`
+  - PUT `/api/trips/:tripId`
+  - DELETE `/api/trips/:tripId`
+
+#### Backend Testing and Validation
+
+- Tested `/api/register` using Postman with mock user data
+- Verified user creation and duplicate email handling
+- Tested `/api/login` and confirmed token generation
+- Confirmed protected endpoints return:
+  - `401 Unauthorized` without token
+  - successful responses with valid token
+- Verified CRUD operations function correctly when authorized
+
+#### Angular Admin Authentication Integration
+
+- Created authentication model (`AuthResponse`)
+- Implemented `AuthService` to communicate with backend login endpoint
+- Created login component with form-based authentication
+- Captured and stored JWT token in browser local storage
+- Configured Angular routing to load login page as default
+
+#### Frontend Security Implementation
+
+- Integrated token into HTTP requests using Angular service
+- Added authorization headers for:
+  - add trip
+  - update trip
+  - delete trip
+- Verified protected operations succeed only after login
+- Ensured public endpoints remain accessible without authentication
+
+#### UI Behavior Enhancement
+
+- Implemented login flow with redirect to admin dashboard
+- Confirmed login state enables full CRUD functionality
+- Validated that unauthorized actions are blocked at the API level
+
+### Result
+
+The Travlr application now includes a complete authentication and authorization system. Users must log in to access administrative functionality, and all sensitive operations are protected using JWT-based security. The integration between the backend API and Angular frontend ensures secure communication and controlled access to application resources.
+
 # Author
 Robert Lake  
 Southern New Hampshire University  
