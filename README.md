@@ -423,6 +423,28 @@ Module 7 focused on securing the Travlr Getaways application by implementing use
 
 The Travlr application now includes a complete authentication and authorization system. Users must log in to access administrative functionality, and all sensitive operations are protected using JWT-based security. The integration between the backend API and Angular frontend ensures secure communication and controlled access to application resources.
 
+---
+
+## Architecture
+
+### Frontend Development Comparison
+The frontend development in this project changed significantly as the application evolved. In the earlier stages, Express HTML and standard JavaScript were used to build and serve the customer-facing pages. This approach worked well for delivering static and lightly dynamic content because the server handled routing and page rendering, while JavaScript added smaller interactive features on the client side. It was straightforward, readable, and effective for presenting travel content to the user.
+
+The single-page application side of the project was different because it was designed for the administrative portion of the system, where faster interaction and a more responsive interface were needed. Instead of reloading entire pages, the SPA updated content dynamically within the browser, which made tasks such as managing trips, handling authentication, and working with protected administrative features feel more immediate and efficient. In that sense, the Express HTML side was better suited for simple content delivery, while the SPA was better suited for an application-like experience with more direct user interaction.
+
+Together, these two frontend approaches showed the difference between traditional server-rendered web design and a more modern client-driven interface. The Express HTML and JavaScript side emphasized simplicity and direct delivery of content, while the SPA emphasized responsiveness, modularity, and a smoother workflow for administrative functions.
+
+### Why the Backend Used MongoDB
+Because the person(s) whom developed this course did not know better.
+
+While MongoDB was used in this course to support rapid development and flexible data structures, it is not an ideal choice for many full stack applications. From my perspective, MongoDB introduces more problems than it solves when compared to a traditional SQL database. The lack of enforced schema can lead to inconsistent data structures over time, especially as an application grows or multiple developers are involved. This creates additional overhead in validation and debugging that would otherwise be handled at the database level in a relational system.
+
+Beyond that, MongoDB trades structure for flexibility in a way that does not hold up well in real-world applications. Full stack systems rely heavily on clear relationships between data, and SQL databases are built specifically to handle that through joins, constraints, and normalization. With MongoDB, those responsibilities are pushed onto the developer, which increases complexity, creates more room for mistakes, and can introduce misinformation in the data when inconsistencies are not caught early. What is presented as “flexibility” often turns into a lack of discipline in data design.
+
+From a practical standpoint, SQL databases better reflect how production systems are actually built and maintained. They enforce structure, ensure consistency, and make complex queries predictable and reliable. MongoDB, on the other hand, can feel like a shortcut that works early on but becomes harder to manage as the system grows, especially when data integrity begins to drift and misinformation starts to propagate through loosely structured records.
+
+As I have consistently stated, educational programs would benefit from moving away from overly theoretical approaches and focusing more on real-world tools and practices. SQL databases are a standard across industries for a reason, and emphasizing them would provide a stronger and more applicable foundation for students entering the field. In comparison, MongoDB feels more like an academic exercise than a practical long-term solution for full stack development.
+
 # Author
 Robert Lake  
 Southern New Hampshire University  
